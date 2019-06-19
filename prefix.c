@@ -21,6 +21,12 @@ Peercoin, Primecoin and Zetacoin use the same constants.
 		.script_prefix           = 196,
 		.private_key_prefix      = 239
 	},
+        {
+                .name                    = "bitcoinhot",
+                .public_key_prefix       = 40,
+                .script_prefix           = 5,
+                .private_key_prefix      = 12
+        },
 /*
 Litecoin:
 public keys / script:

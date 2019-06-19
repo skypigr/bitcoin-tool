@@ -230,7 +230,18 @@ OUTPUT=$($BITCOIN_TOOL \
 check "${TEST}" "${OUTPUT}" "${EXPECTED}" || exit 1
 # -----------------------------------------------------------------------------
 
-
+TEST="prefix8 - WIF compressed private key to address (bitcoinhot)"
+EXPECTED="HEDFxk3BpeoWfCt9eeFccqShMDqdgQEgPy"
+INPUT="2sLAphKdvveDChCgQvKffdsewrYohzFP885pB6TXAjPtWRAqDzCK"
+OUTPUT=$($BITCOIN_TOOL \
+        --input-type private-key-wif \
+        --input-format base58check \
+        --output-type address \
+        --output-format base58check \
+        --network bitcoinhot \
+        --input "${INPUT}")
+check "${TEST}" "${OUTPUT}" "${EXPECTED}" || exit 1
+# -----------------------------------------------------------------------------
 
 
 echo "all tests passed"
